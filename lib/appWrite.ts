@@ -12,7 +12,7 @@ import * as Linking from "expo-linking";
 import { openAuthSessionAsync } from "expo-web-browser";
 
 export const config = {
-  platform: "com.gusain.restate",
+  platform: "com.gusain.reactnative",
   endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT,
   projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID,
   // databaseId: process.env.EXPO_PUBLIC_APPWRITE_DATABASE_ID,
@@ -33,23 +33,23 @@ client
 
 export const avatar = new Avatars(client);
 export const account = new Account(client);
-export const databases = new Databases(client);
+// export const databases = new Databases(client);
 // export const storage = new Storage(client);
 
 export async function login() {
   try {
-    const redirectUri = Linking.createURL("/");
+    let redirectUri = Linking.createURL("/");
 
     const response = await account.createOAuth2Token(
       OAuthProvider.Google,
       redirectUri
     );
     if (!response) throw new Error("Create OAuth2 token failed");
-
     const browserResult = await openAuthSessionAsync(
       response.toString(),
       redirectUri
     );
+    console.log("browserResult  ", browserResult);
     if (browserResult.type !== "success")
       throw new Error("Create OAuth2 token failed");
 
