@@ -45,7 +45,8 @@
             "./assets/fonts/Rubik-Regular.ttf"
           ]
         }
-      ]
+      ],
+      "expo-sqlite"
     ],
     "experiments": {
       "typedRoutes": true
