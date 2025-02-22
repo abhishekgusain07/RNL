@@ -9,11 +9,13 @@ export default function Index() {
         justifyContent: "center",
         alignItems: "center",
       }}
+      className="bg-black text-white"
     >
-      <Link  href="/sign-in">Sign In</Link>
-      <Link  href="/explore">Explore</Link>
-      <Link  href="/profile">Profile</Link>
-      <Link  href="/properties/1">Property Details</Link>
+      <Text className="font-bold mb-3 text-white"> Testing Tailwindcss </Text>
+      <Link  href="/sign-in" className="text-white">Sign In</Link>
+      <Link  href="/explore" className="text-white">Explore</Link>
+      <Link  href="/profile" className="text-white">Profile</Link>
+      <Link  href="/properties/1" className="text-white">Property Details</Link>
     </View>
   );
 }
